@@ -1,0 +1,366 @@
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        background: #f8f9fa;
+        /* Light background for inner pages */
+        margin: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .container {
+        /* Desktop container styles */
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        flex-direction: column;
+        background: linear-gradient(135deg, #8B1538, #5D0E29);
+        /* Keep red for desktop? No this is hidden on mobile */
+        border-radius: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        box-shadow: none;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+
+
+
+    /* Mobile Form View Container */
+    .mobile-form-view {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        /* Expand to fit content */
+        height: auto;
+        padding: 0 0 50px 0;
+        /* Add bottom padding */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-form-view.active {
+        display: flex !important;
+        opacity: 1;
+    }
+
+    /* Mobile Landing Screen - Initial View */
+    .mobile-landing {
+        background: linear-gradient(135deg, #8B1538, #5D0E29);
+        /* Explicit Red for Landing */
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Left align text content */
+        justify-content: space-between;
+        /* Push content to edges */
+        width: 100%;
+        min-height: 100vh;
+        padding: 60px 40px;
+        text-align: left;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-landing.hidden {
+        display: none !important;
+        opacity: 0;
+    }
+
+    .mobile-landing .logo {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Left align logo items */
+    }
+
+    .mobile-landing .logo img {
+        width: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        background: white;
+        filter: none;
+    }
+
+    .mobile-landing .logo h2 {
+        font-size: 1.8rem;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .mobile-landing h1 {
+        font-size: 2.8rem;
+        /* Larger layout title */
+        color: white;
+        margin: 20px 0 0 0;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .mobile-landing p {
+        /* Optional if present */
+        display: none;
+    }
+
+    .mobile-landing-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+        /* Center the buttons horizontally */
+        margin-bottom: 20px;
+    }
+
+    .mobile-landing-btn {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        color: white;
+        padding: 16px 0;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-landing-btn:active {
+        transform: scale(0.98);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+    }
+
+    /* Top Red Panel with Curved Bottom - Longer ("loing") and Rounded ("ronded") */
+    .mobile-top-panel {
+        background: linear-gradient(135deg, #8B1538, #5D0E29);
+        width: 100%;
+        padding: 40px 30px 140px 30px;
+        /* Increased bottom padding for longer curve */
+        text-align: center;
+        position: relative;
+        border-radius: 0 0 50% 50% / 0 0 30px 30px;
+        /* Elliptical curve for smoother look */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        margin-bottom: 0;
+        z-index: 1;
+    }
+
+    .mobile-top-panel .logo {
+        margin-bottom: 15px;
+    }
+
+    .mobile-top-panel .logo img {
+        width: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        background: white;
+        filter: none;
+    }
+
+    .mobile-top-panel .logo h2 {
+        font-size: 1.4rem;
+        color: white;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-top-panel h1 {
+        font-size: 1.8rem;
+        color: white;
+        margin: 15px 0 10px 0;
+        font-weight: 700;
+    }
+
+    .mobile-top-panel p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    /* White Form Card - "In Frame" and Overlapping */
+    .mobile-form-card {
+        background: white;
+        width: 88%;
+        max-width: 360px;
+        margin: -100px auto 30px auto;
+        /* Deep overlap */
+        border-radius: 25px;
+        padding: 35px 25px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        /* Soft, premium shadow */
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Hide desktop panels on mobile */
+    .green-panel,
+    .white-panel {
+        display: none !important;
+    }
+
+    /* Form styling */
+    .mobile-form-card .green-text {
+        display: none;
+        /* Hide duplicate header in card if present */
+    }
+
+    .mobile-form-card .subtext {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    .mobile-form-card input {
+        width: 100%;
+        background-color: #f0f4f8;
+        /* Softer cool gray */
+        border: 2px solid transparent;
+        padding: 15px 18px;
+        margin: 10px 0;
+        border-radius: 50px;
+        /* Full pill shape for premium feel on mobile too? Or keep 12px? User said "dont change layout". Pill is nicer. Let's try pill to match desktop for consistency. */
+        outline: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 0.95rem;
+        color: #444;
+        font-weight: 500;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .mobile-form-card input:focus {
+        background-color: #ffffff;
+        border-color: rgba(139, 21, 56, 0.3);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(139, 21, 56, 0.15),
+            inset 0 0 0 transparent;
+    }
+
+    .mobile-form-card input::placeholder {
+        color: #9ca3af;
+    }
+
+    .mobile-form-card .forgot-pass {
+        color: #8B1538;
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: block;
+        margin: 5px 0 25px 0;
+        text-align: right;
+        transition: all 0.3s ease;
+        font-weight: 600;
+    }
+
+    .mobile-form-card .forgot-pass:hover {
+        color: #5D0E29;
+        text-decoration: underline;
+    }
+
+    .mobile-form-card .solid-btn {
+        background: linear-gradient(145deg, #8B1538, #5D0E29);
+        color: white;
+        border: none;
+        padding: 16px 40px;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 5px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 20px rgba(93, 14, 41, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        width: 100%;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-form-card .solid-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+
+    .mobile-form-card .solid-btn:active {
+        transform: scale(0.98);
+        box-shadow: 0 5px 10px rgba(93, 14, 41, 0.3);
+    }
+
+    .mobile-form-card .signup-text {
+        text-align: center;
+        margin-top: 25px;
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .mobile-form-card .signup-text a {
+        color: #8B1538;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .mobile-form-card form {
+        margin-bottom: 0;
+    }
+
+    /* Simple Back button (Just Arrow) */
+    .mobile-back-btn {
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        background: transparent;
+        /* No background circle */
+        border: none;
+        color: white;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.8rem;
+        /* Larger arrow */
+        transition: transform 0.3s ease;
+        z-index: 10;
+    }
+
+    .mobile-back-btn:active {
+        background: transparent;
+        transform: translateX(-5px);
+    }
+}
+
+/* Desktop - Hide mobile elements */
+@media (min-width: 769px) {
+
+    .mobile-landing,
+    .mobile-form-view,
+    .mobile-top-panel,
+    .mobile-form-card,
+    .mobile-back-btn {
+        display: none !important;
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueflame Login</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+    <!-- MOBILE LANDING SCREEN (Only visible on mobile) -->
+    <div class="mobile-landing" id="mobileLanding">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo">
+            <h2>arman web devlper</h2>
+        </div>
+        <h1>Hello<br>Sign in!</h1>
+        <div class="mobile-landing-buttons">
+            <button class="mobile-landing-btn" id="mobileSignInBtn">SIGN IN</button>
+            <button class="mobile-landing-btn" id="mobileSignUpBtn">SIGN UP</button>
+        </div>
+    </div>
+
+    <!-- MOBILE LOGIN VIEW -->
+    <div class="mobile-form-view" id="mobileLoginView">
+        <div class="mobile-top-panel">
+            <button class="mobile-back-btn" id="backFromLogin">←</button>
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo">
+                <h2>arman web devlper</h2>
+            </div>
+            <h1>Welcome Back</h1>
+        </div>
+        <div class="mobile-form-card">
+            <form id="mobileLoginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <a href="#" class="forgot-pass">Forgot Password?</a>
+                <button type="submit" class="solid-btn">SIGN IN</button>
+            </form>
+            <p class="signup-text">Don't have account? <a href="#" id="switchToSignupMobile">sign up</a></p>
+        </div>
+    </div>
+
+    <!-- MOBILE SIGNUP VIEW -->
+    <div class="mobile-form-view" id="mobileSignupView">
+        <div class="mobile-top-panel">
+            <button class="mobile-back-btn" id="backFromSignup">←</button>
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo">
+                <h2>arman web devlper</h2>
+            </div>
+            <h1>Create Your Account</h1>
+        </div>
+        <div class="mobile-form-card">
+            <form id="mobileSignupForm">
+                <input type="text" placeholder=" Enter Full Name" required>
+                <input type="email" placeholder="Enter Email" required>
+                <input type="password" placeholder="Enter Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit" class="solid-btn">SIGN UP</button>
+            </form>
+            <p class="signup-text">Don't have account? <a href="#" id="switchToLoginMobile">log in</a></p>
+        </div>
+    </div>
+
+    <!-- DESKTOP CONTAINER (Hidden on mobile) -->
+    <div class="container" id="mainContainer">
+        <!-- Green Panel (Left side for login, Right side for signup) -->
+        <div class="side green-panel">
+            <!-- Content for Login State -->
+            <div class="panel-content login-panel">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo">
+                    <h2>arman web devlper</h2>
+                </div>
+                <h1>Welcome Back!</h1>
+                <p>To stay connected with us please login with your personal info</p>
+                <button class="outline-btn" id="signUpBtn">SIGN UP</button>
+            </div>
+
+            <!-- Content for Signup State -->
+            <div class="panel-content signup-panel">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo">
+                    <h2>arman web devlper</h2>
+                </div>
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start your journey with us</p>
+                <button class="outline-btn" id="signInBtn">SIGN IN</button>
+            </div>
+        </div>
+
+        <!-- White Form Panel (Right side for login, Left side for signup) -->
+        <div class="side white-panel">
+            <!-- Login Form -->
+            <div class="form-content login-form">
+                <h1 class="green-text">welcome</h1>
+                <p class="subtext">Login to your account to continue</p>
+
+                <form id="loginForm">
+                    <input type="email" placeholder="Enter Email" required>
+                    <input type="password" placeholder="Enter Password" required>
+                    <a href="#" class="forgot-pass">Forgot your password?</a>
+                    <button type="submit" class="solid-btn">LOG IN</button>
+                </form>
+                <p class="signup-text">Don't have an account? <a href="#" id="showSignupMobile">sign up</a></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-content signup-form">
+                <h1 class="green-text">Create Account</h1>
+                <p class="subtext">Sign up to get started</p>
+
+                <form id="signupForm">
+                    <input type="text" placeholder="Enter Full Name" required>
+                    <input type="email" placeholder="Enter Email" required>
+                    <input type="password" placeholder="Enter Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="solid-btn">SIGN UP</button>
+                </form>
+                <p class="signup-text">Already have an account? <a href="#" id="showLoginMobile">log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
